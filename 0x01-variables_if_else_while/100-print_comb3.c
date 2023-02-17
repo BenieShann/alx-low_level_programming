@@ -19,13 +19,13 @@ int main(void)
 			putchar(ones);
 
 			if (tens != '8' || ones != '9') /*print commas*/
-		{
-			putchar(',');
-			putchar(' ');
-		}
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 
-			putchar('\n');
-
+	}	
+	putchar('\n');
 	return (0);
 }
