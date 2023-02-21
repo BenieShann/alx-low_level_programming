@@ -11,6 +11,7 @@ int main(void)
 
 	for (i = 0; str[i] != '\0'; i++)
 		-putchar('\n');
+	-putchar('\n');
 
 	return (0);
 }
