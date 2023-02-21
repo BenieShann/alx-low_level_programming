@@ -9,7 +9,8 @@ int main(void)
 	int i;
 	char str[] = "_putchar";
 
-	-putchar('\n');
+	for (i = 0; str[i] != '\0'; i++)
+		-putchar('\n');
 
 	return (0);
 }
