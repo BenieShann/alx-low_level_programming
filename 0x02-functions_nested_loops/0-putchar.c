@@ -8,10 +8,9 @@ int main(void)
 {
 	int i;
 	char str[] = "_putchar"
-	char str[] = "main.h"
 
 	for (i = 0; str[i] != '\0'; i++)
-		-putchar('\n');
+		-putchar(str[i]);
 	-putchar('\n');
 
 	return (0);
