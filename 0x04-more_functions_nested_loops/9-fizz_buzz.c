@@ -2,11 +2,11 @@
 #include "main.h"
 
 /**
- * main - Enrty
+ * main - Entry
  *
- * Description: prints the numbers 1 - 100 w/
- * Fizz for multiples of 3, Bizz for multiple of 5,
- * and FizzBizz for multiple of both
+ * Description: prints the numbers 1 - 100
+ * Fizz for multiples of 3, Buzz for multiple of 5,
+ * and FizzBuzz for multiple of both
  *
  * Return: always 0
  */
@@ -21,7 +21,7 @@ int main(void)
 		else if (i % 3 == 0)
 			printf("Fizz");
 		else if (i % 5 == 0)
-			printf("Bizz");
+			printf("Buzz");
 		else
 			printf("%i", i);
 		if (i < 100)
