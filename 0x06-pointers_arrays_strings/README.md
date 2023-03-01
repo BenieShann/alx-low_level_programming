@@ -1,6 +1,6 @@
- C - More pointers, arrays and strings
+# C - More pointers, arrays and strings
 
----
+----
 
 ### [0. strcat](./0-strcat.c)
 * A function that concatenates two strings.
