@@ -20,7 +20,7 @@ int _atoi(char *s)
 		{
 			if (size > 0)
 				m *= 10;
-				size++;
+			size++;
 		}
 		count++;
 	}
