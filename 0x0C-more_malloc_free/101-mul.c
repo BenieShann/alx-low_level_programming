@@ -27,6 +27,7 @@ void _is_zero(char *argv[])
 			isn2 = 0;
 			break;
 		}
+
 	if (isn1 == 1 || isn2 == 1)
 	{
 		printf("0\n");
