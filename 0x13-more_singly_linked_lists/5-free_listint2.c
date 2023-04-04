@@ -12,14 +12,14 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *adjacent;
+	listint_t *next;
 
 	if (head == NULL)
 		return;
 	while (*head != NULL)
 	{
-		adjacent = (*head)->adjacent;
+		next = (*head)->next;
 		free(*head);
-		*head = adjacent;
+		*head = next;
 	}
 } /*BenieShann*/
