@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * binary_to_uint - converts a binary to an unsigned int
+ * binary_to_uint - converts a binary number to an unsigned int
  * @b: pointer to a string with a binary number
  *
- * return: 0 to indicate an error or unsigned int of binary number
- *
+ * Return: the converted number or 0 if b is null or
+ * there is one or more chars in the string b that is not in 0
  */
 
 unsigned int binary_to_uint(const char *b)
