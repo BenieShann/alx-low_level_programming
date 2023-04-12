@@ -1,82 +1,140 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
-* error_read - function checks for error for reading a file.
-*
-* @s: pointer to character string
-*
-*/
+ * from_to - reads from and writes to copy stops when rd < 0.
+ *
+ * @cpy: struct
+ */
 
-void error_read(char *s)
+void from_to(copy_struct *cpy)
 {
-	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
-	exit(98);
+	cpy->rd = 1;
+
+	while (cpy->rd)
+	{
+		cpy->rd = read(cpy->from_file, cpy->buffer, 1204);
+		if (cpy->rd < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", cpy->from);
+			exit(98);
+		}
+
+		cpy->wt = write(cpy->to_file, cpy->buffer, cpy->rd);
+		if (cpy->wt < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", cpy->to);
+			exit(99);
+		}
+	}
 }
 
 /**
-* cp_error - error handler for copy function.
-*
-* @content: to be copied from the file
-* @buffer: temporarly store data
-*
-*/
+ * file_copy - copies one file to another name
+ *
+ * @cpy: struct
+ */
 
-void cp_error(char *content, char *buffer)
+void file_copy(copy_struct *cpy)
 {
-	free(buffer);
-	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", content);
-	exit(99);
+	cpy->from_file = open(cpy->from, O_RDONLY);
+
+	if (cpy->from_file < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", cpy->from);
+		exit(98);
+	}
+
+	cpy->to_file = open(cpy->to, O_CREAT | O_WRONLY | O_TRUNC,
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+
+	if (cpy->to_file < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", cpy->to);
+		exit(99);
+	}
+
+	from_to(cpy);
+
+	cpy->wt = close(cpy->from_file);
+	if (cpy->wt < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cpy->from_file);
+		exit(100);
+	}
+
+	cpy->wt = close(cpy->to_file);
+	if (cpy->wt < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cpy->to_file);
+		exit(100);
+	}
+
+}
+
+/**
+ * init_struct - initializes copy struct.
+ *
+ * @cpy: struct
+ * @argv: arguments to put into struct
+ */
+
+void init_struct(copy_struct *cpy, char **argv)
+{
+	if (cpy == NULL)
+		return;
+
+	if (argv == NULL)
+		return;
+
+	cpy->from = argv[1];
+	cpy->to = argv[2];
+	cpy->buffer = malloc(sizeof(char) * 1204);
+
+	if (cpy->buffer == NULL)
+		exit(-1);
 }
 
 
 /**
-* main - entry point.
-* @argc: no. of arguments
-* @argv: arguments vector
-* @error_file: error of the file
-* Return: 0 always
-*/
+ * main - entry point
+ *
+ * @argc: integer to check no. of arguments entered
+ * @argv: argument vector
+ *
+ * Return: 0
+ */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int file_from, file_to, err_close;
-	ssize_t schars, swr;
-	char buf[1024];
+	copy_struct *cp_command;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	file_from = open(argv[1], O_RDONLY);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	error_file(file_from, file_to, argv);
-
-	schars = 1024;
-	while (schars == 1024)
+	if (argv[1] == NULL)
 	{
-		schars = read(file_from, buf, 1024);
-		if (schars == -1)
-			error_file(-1, 0, argv);
-		swr = write(file_to, buf, schars);
-		if (swr == -1)
-			error_file(0, -1, argv);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 
-	err_close = close(file_from);
-	if (err_close == -1)
+	if (argv[2] == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-		exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
 	}
 
-	err_close = close(file_to);
-	if (err_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-		exit(100);
-	}
+	cp_command = malloc(sizeof(copy_struct));
+
+	if (cp_command == NULL)
+		return (0);
+
+	init_struct(cp_command, argv);
+
+	file_copy(cp_command);
 
 	return (0);
 }
