@@ -1,4 +1,4 @@
- C - Even more pointers, arrays and strings
+*  [### C - Even more pointers, arrays and strings](./C-Even_more_pointers_arrays)
 ---
 
 ### [O. memset](./0-memset.c)
