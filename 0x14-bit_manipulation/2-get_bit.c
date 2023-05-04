@@ -3,7 +3,7 @@
 /**
  * get_bit - return the value of a bit at a give index
  * @n: unsigned long int input
- * @index: index of the bit
+ * @index: index of the bit.
  *
  * Return: value of bit at index or -1 if error
  */
