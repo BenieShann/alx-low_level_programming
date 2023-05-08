@@ -6,7 +6,7 @@
  * @filename: name of file to read.
  * @letters: number of letters it should read or print.
  *
- * Return:actual number of letters possible 
+ * Return:actual number of letters possible
  *        to be read or print.
  */
 
