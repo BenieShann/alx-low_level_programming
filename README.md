@@ -34,7 +34,7 @@ This repository contains programs written for the low-level programming and algo
 
 ## Author :black_nib:
 
-* **BenieShann** [Shann](https://github.com/BenieShann)
+* **Benieshann** [Shann](https://github.com/BenieShann)
 
 ## Acknowledgements :pray:
 
