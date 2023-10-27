@@ -3,10 +3,11 @@
 #include <ctype.h>
 /**
  * main - adds argument from the cmd
- * @argc: number of arguments
+ * @argc: number of arguments.
  * @argv: the arguments
- * Return: 0 on success, 1on fail
+ * Return: 0 on success.
  */
+
 int main(int argc, char *argv[])
 {
 	int sum, num, digit;

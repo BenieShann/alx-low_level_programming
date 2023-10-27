@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
  * main - prints the minimum number of coins to make change for an
  * amount of money
@@ -8,6 +9,7 @@
  * @argv: an aray of the commanf line arguments passed to the function
  * Return: 0 on success
  */
+
 int main(int argc, char *argv[])
 {
 	int cent_vals[] = {25, 10, 5, 2, 1};
