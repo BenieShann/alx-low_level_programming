@@ -5,6 +5,7 @@
 /**
  * _strlen - returns the length of a string
  * @s: string
+ *
  * Return: length
  */
 
@@ -22,8 +23,10 @@ int _strlen(char *s)
  * argstostr - concatenates all the arguments of your program
  * @ac: argc
  * @av: arguments
+ *
  * Return: pointer to array
  */
+
 char *argstostr(int ac, char **av)
 {
 	char *s;
@@ -31,8 +34,6 @@ char *argstostr(int ac, char **av)
 
 	if (ac == 0 || av == NULL) /* validate input */
 		return (NULL);
-
-	/* find length to malloc */
 
 	for (i = 0; i < ac; i++)
 	{
@@ -49,9 +50,6 @@ char *argstostr(int ac, char **av)
 		free(s);
 		return (NULL);
 	}
-
-	/* insert each arg into *str */
-
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; j < _strlen(av[i]); j++)
