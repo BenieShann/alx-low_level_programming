@@ -8,6 +8,7 @@
  *
  * Return: void
  */
+
 void _print(char *str, int l)
 {
 	int i, j;
@@ -35,6 +36,7 @@ void _print(char *str, int l)
  *
  * Return: pointer to dest, or NULL on failure
  */
+
 char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 {
 	int j, k, mul, mulrem, add, addrem;
@@ -66,6 +68,7 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
  *
  * Return: 0 if digits, 1 if not
  */
+
 int check_for_digits(char **av)
 {
 	int i, j;
@@ -88,6 +91,7 @@ int check_for_digits(char **av)
  *
  * Return: void
  */
+
 void init(char *str, int l)
 {
 	int i;
@@ -104,6 +108,7 @@ void init(char *str, int l)
  *
  * Return: zero, or exit status of 98 if failure
  */
+
 int main(int argc, char *argv[])
 {
 	int l1, l2, ln, ti, i;

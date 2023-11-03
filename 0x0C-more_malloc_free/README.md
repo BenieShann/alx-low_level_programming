@@ -1,5 +1,7 @@
 # C - More malloc, free
 
+---
+
 ## Header File :file_folder:
 
 * [main.h](./main.h): Header file containing prototypes for all functions written in
