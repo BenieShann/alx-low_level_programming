@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
+
 /**
  * op_add - Struct op
  *
@@ -8,10 +9,12 @@
  * @b: The function associated
  * Return: int
  */
+
 int op_add(int a, int b)
 {
 	return (a + b);
 }
+
 /**
  * op_sub - Struct op
  *
@@ -19,10 +22,12 @@ int op_add(int a, int b)
  * @b: The function associated
  * Return: int
  */
+
 int op_sub(int a, int b)
 {
 	return (a - b);
 }
+
 /**
  * op_mul - Struct op
  *
@@ -30,10 +35,12 @@ int op_sub(int a, int b)
  * @b: The function associated
  * Return: int
  */
+
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
+
 /**
  * op_div - Struct op
  *

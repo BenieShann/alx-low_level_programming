@@ -1,7 +1,8 @@
- #include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "3-calc.h"
+
 /**
  * main - main
  * @argc: arg count
@@ -9,7 +10,8 @@
  *
  * Return: int
  *
- **/
+ */
+
 int main(int argc, char **argv)
 {
 	int inta, intb;
