@@ -1,8 +1,9 @@
 #include "lists.h"
 
 /**
- * list_len - Returns the number of nodes in a linked list of type list_t
- * @h: Pointer to the head of the linked list
+ * list_len - Returns no. of nodes in a linked list of type list_t
+ * @h:pointer to the head of linked list
+ *
  * Return: Number of nodes in the linked list
  */
 

@@ -1,4 +1,5 @@
 section .data
+
     ; Define a null-terminated string "Hello, Holberton" followed by a line feed
     str: db "Hello, Holberton", 0xa
     

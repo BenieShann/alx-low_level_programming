@@ -5,6 +5,7 @@
  * @str: string
  * Return: length
  */
+
 int _strlen(const char *str)
 {
 	int len;
@@ -18,8 +19,10 @@ int _strlen(const char *str)
  * add_node_end - add node to end of linked list
  * @head: linked list
  * @str: data for new node
- * Return: address of new element, or NULL if failed
+ *
+ * Return: address of new element
  */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new_node, *tmp;

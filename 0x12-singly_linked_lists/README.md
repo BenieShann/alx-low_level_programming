@@ -1,6 +1,7 @@
 # Singly linked lists
 
 ---
+
 ## Technologies
 * C files are compiled using `gcc 
 * Tested on Ubuntu 20.04 LTS
@@ -17,7 +18,6 @@ All of the following files are programs written in C:
 | `4-free_list.c` | Frees a `list_t` list |
 | `100-first.c` | Prints a message before main function is executed |
 | `101-hello_holberton.asm` | Assembly code that prints `Hello, Holberton` only using `printf` function |
-
 
 ---
 
@@ -49,3 +49,4 @@ All of the following files are programs written in C:
 * A 64-bit program in assembly that prints Hello, Holberton, followed by a new line.
 
 ---
+

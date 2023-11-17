@@ -2,7 +2,6 @@
 
 /**
  * printfirst - function executed before main function
- * Note: made possible by prior declaration of "__attribute__ ((constructor))"
  */
 
 void printfirst(void)
