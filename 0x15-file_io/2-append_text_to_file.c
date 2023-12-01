@@ -2,10 +2,8 @@
 
 /**
  * append_text_to_file - function append contents to the end of the file
- *
  * @filename: name of file to create
  * @text_content: content to.
- *
  * Return: 1 if the function sucessfully appends the text to the file,
  * -1 if error.
  */

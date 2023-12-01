@@ -3,7 +3,6 @@
 
 /**
  * from_to - reads from and writes to copy stops when rd < 0.
- *
  * @cpy: struct
  *
  */
@@ -33,7 +32,6 @@ void from_to(copy_struct *cpy)
 
 /**
  * file_copy - copies one file to another name
- *
  * @cpy: struct
  *
  */
@@ -76,7 +74,6 @@ void file_copy(copy_struct *cpy)
 
 /**
  * init_struct - initializes copy struct.
- *
  * @cpy: struct
  * @argv: arguments to put into struct
  *
@@ -101,7 +98,6 @@ void init_struct(copy_struct *cpy, char **argv)
 
 /**
  * main - entry point
- *
  * @argc: integer to check no. of arguments entered
  * @argv: argument vector
  *

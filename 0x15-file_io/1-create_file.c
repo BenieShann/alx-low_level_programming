@@ -2,10 +2,8 @@
 
 /**
  * create_file - creates a file with ead or write access for user
- *
  * @filename: name of file to create
  * @text_content: content of file to create
- *
  * Return: 1 on success, -1 if it failed.
  */
 

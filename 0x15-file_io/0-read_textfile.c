@@ -2,12 +2,9 @@
 
 /**
  * read_textfile - reads text files and prints it to POSIX stdout.
- *
  * @filename: name of file to read.
  * @letters: number of letters it should read or print.
- *
- * Return:actual number of letters possible
- *        to be read or print.
+ * Return:actual number of letters possible to be read or print.
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
