@@ -23,6 +23,8 @@
 * What are the <code>gcc</code> flags <code>-Wall -Werror -pedantic -Wextra -std=gnu89</code>
 * What are header files and how to to use them with <code>#include</code>
 
+###Tasks
+
 ### [0. isupper](./0-isupper.c)
 * A function that checks for uppercase character.
 
